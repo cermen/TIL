@@ -6,7 +6,7 @@
 
 - `git init`
 - `.git/` 폴더를 생성해준다.
-- ![init](C:\Users\정연욱\Desktop\TIL\Git\init.PNG)
+- ![init](init.PNG)
 
 - `.git` 폴더가 생성된 경우 오른쪽에 `master`라는 표시가 나온다.
 - 최초에 한번만 하면 된다.
@@ -41,3 +41,8 @@
 - `git push origin master`
 - '깃아 올려줘 origin으로 master를'
 - 원격저장소에 로컬 저장소의 데이터를 전송
+
+### 6. status
+
+- `git status`
+- 현재 git 상태를 출력
