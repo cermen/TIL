@@ -6,8 +6,8 @@
 
 - `git init`
 - `.git/` 폴더를 생성해준다.
-![init](init.PNG)
 
+![init](init.PNG)
 - `.git` 폴더가 생성된 경우 오른쪽에 `master`라는 표시가 나온다.
 - 최초에 한번만 하면 된다.
 
