@@ -40,6 +40,7 @@
   one = 'one'
   two = 'two'
   
+  print("%s %s" % (one, two))
   print("{} {}".format(one, two))
   print("{1} {0}".format(one, two))
   
@@ -47,11 +48,12 @@
   print('%-10s' % ('nice'))
   print('%10.5f' % 3.1415926535)
   print('{:10.5f}'.format(3.1415926535))
+```
+  
   ```
-
-  ```
-  -- 출력 결과 --
-one two
+-- 출력 결과 --
+  one two
+  one two
   two one
         nice
   nice      
