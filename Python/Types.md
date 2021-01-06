@@ -33,7 +33,7 @@ li = [1, 2, 3]
 - 순서 O, 중복 O, 수정 O, 삭제 O
   ```python
   a = [1, 2, 3]
-print(a)
+  print(a)
   
   # indexing
   print(a[0])
