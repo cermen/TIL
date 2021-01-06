@@ -138,10 +138,78 @@ fruit_color = {
     'melon': 'green',
     'orange': 'orange'
 }
+# 아래 dic1과 dic2는 fruit_color와 같음
+dic1 = dict([('apple', 'red'), ('banana', 'yellow'), ('grape', 'purple'), ('melon', 'green'), ('orange', 'orange')])
+dic2 = dict(apple='red', banana='yellow', grape='purple', melon='green', orange='orange')
 ```
 - key와 value의 대응관계 자료형
 - Hash 또는 Associative array와 유사한 구조
 - 순서 X, 키 중복 X, 수정 O, 삭제 O
+- **주요 내장 함수**
+  - `keys()` : 딕셔너리의 키 목록을 반환
+  - `values()` : 딕셔너리의  값 목록을 반환
+  - `items()` : 딕셔너리의 키와 값 튜플 목록을 반환
+  - 위 3개 함수로 반환된 값을 사용하려면 `list()`로 캐스팅해야 함 
 
+### 5. Set
 
+````python
+st1 = {1, 2, 3}
+st2 = set([1,2,3,1,4,5,5,3])	# {1, 2, 3, 4, 5}
+st3 = {False, 1, 3.14, 'Pen'}	# 서로 다른 자료형을 넣을 수 있음
+````
 
+- 순서 X, 중복 X, 수정 O, 삭제 O
+
+- 활용 빈도가 낮다.
+
+- Set의 연산
+  - 교집합: `a & b` 또는 `a.intersection(b)`
+  - 합집합: `a | b` 또는 `a.union(b)`
+  - 차집합: `a - b` 또는 `a.difference(b)`
+
+### 6. bool
+
+- `True`와 `False` 두 가지만 존재함
+- ` not`, `and`, `or` : 논리연산
+- `~`, `&`, `|` : 비트연산
+- `""`, `[]`, `()`, `{}`, `0`, `None`은 `False`로 간주
+
+### 7. date, datetime (날짜)
+
+```python
+from datetime import date, datetime
+
+# 현재 날짜 표시
+today = date.today()
+print('date -', today)
+print('{}년 {}월 {}일'.format(today.year, today.month, today.day))
+
+# 현재 시각 표시
+today_date_time = datetime.now()
+print('datetime -', today_date_time)
+print('{}년 {}월 {}일 {:02d}시 {:02d}분 {:02d}초'.format(today.year, today.month, today.day, today_date_time.hour, today_date_time.minute, today_date_time.second))
+```
+
+- 파이썬 내부 라이브러리 `datetime` 모듈 내에 정의됨
+- `date` 객체 : 날짜를 다루는 객체
+- `datetime` 객체 : 날짜/시간을 다루는 객체
+- `timedelta` 객체 : 날짜/시간의 변화를 다룰 때 사용
+  
+  - year, month 관련된 옵션을 필요로 할 경우 외부 라이브러리 `dateutil.relativedelta` 사용
+  ```python
+  from datetime import date, timedelta
+  
+  today = date.today()
+  days = timedelta(days=-1)
+  print('오늘 이전 하루 - {}'.format(today+days))
+  
+  # year, month 관련된 옵션을 필요로 할 경우 relativedelta 사용
+  from dateutil.relativedelta import relativedelta
+  
+  days = relativedelta(months=-2)
+  print('두 달 전 날짜 - {}'.format(today + days))
+  
+  days = relativedelta(years=-1)
+  print('1년 전 날짜 - {}'.format(today + days))
+  ```
