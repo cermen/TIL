@@ -49,7 +49,7 @@ obj.plus()
 #### 예제
 ```python
 class Employee:
-    raise_rate = 1.1    # 급여인상률(class variavle)
+    raise_rate = 1.1    # 급여인상률(class 변수)
     def __init__(self, name, salary):
         self.name = name
         self.salary = salary
@@ -89,3 +89,85 @@ print('인상 후 급여 -', emp01.get_salary())
 인상 후 급여 - 현재 jyu님의 급여는 1500입니다.
 ```
 
+
+
+## 객체지향의 주요 개념
+
+### 상속 (Inheritance)
+
+- 기존 클래스를 추가하여 멤버 추가하거나 동작 변경
+```python
+class Parent(object):
+    # 파이썬에서는 다른 언어와는 달리 생성자를 한 번밖에 쓸 수 없다.
+    def __init__(self, name, job):
+        self.name = name
+        self.job = job
+
+class Child(Parent):	# Parent 클래스를 상속
+    def __init__(self, name, job, age):
+        super().__init__(name, job)	# super() : 부모 클래스를 지칭함
+        self.age = age
+```
+
+### 은닉화 (Encapsulation, 캡슐화)
+
+- 객체의 데이터와 기능을 하나로 묶고 외부에 노출되지 않도록 숨김 처리 하는 것
+- 파이썬은 protected, private 등의 접근 제어자가 없음
+  - 변수/함수명 앞에 `_`를 붙이면 protected가 되며, `__`를 붙이면 private가 된다.
+
+```python
+class HidingClass(object):
+    def __init__(self, name, dept, num):
+        self.utype = self.__class__.__name__
+        self.name = name
+        self.__dept = dept	# __로 시작하는 변수는 외부에서 접근이 되지 않는다.
+        self.num = num
+
+    # private 변수에 접근하기 위해서는 getter와 setter 함수를 이용
+    def get_dept(self):
+        return self.__dept
+    
+    def set_dept(self, dept):
+        self.__dept = dept
+
+    def __info(self):
+        return "__로 시작했기 때문에 해당 함수는 외부에서 접근이 되지 않습니다."
+```
+
+### 다형성 (Polymorphism)
+
+- 상위 클래스에 정의된 함수를 하위 클래스에서 해당 함수를 재정의(method overriding)
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+    def hello(self):
+        print(self.name, '안녕')
+
+class Dog(Animal):
+    def hello(self):
+        print(self.name, '멍멍')
+        
+class Duck(Animal):
+    def hello(self):
+        print(self.name, '꽥꽥')
+
+animal = Animal('돌이')
+dog = Dog('바둑이')
+duck = Duck('오리')
+animal.hello()
+dog.hello()
+duck.hello()
+```
+
+```
+--- 실행 결과 ---
+돌이 안녕
+바둑이 멍멍
+오리 꽥꽥
+```
+
+### 추상화 (Abstraction)
+
+*(내일 업로드 예정)*
