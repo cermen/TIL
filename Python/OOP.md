@@ -168,6 +168,74 @@ duck.hello()
 오리 꽥꽥
 ```
 
-### 추상화 (Abstraction)
+### 추상 클래스 (Abstraction Class)
 
-*(내일 업로드 예정)*
+- 메서드 구현을 강제하기 위해 사용
+- 추상 메서드(함수)를 하나라도 가지면 추상 클래스가 된다.
+- 추상 클래스는 객체를 생성하지 않는다.
+- 추상 클래스를 구현하려면 `abc` 모듈을 import해야 한다.
+```python
+from abc import *
+
+class Base(metaclass=ABCMeta):
+    @abstractmethod
+    def study(self):
+        pass
+
+    def go_to_school(self):
+        print('학교에 갑니다.')
+
+class Student(Base):
+    def study(self):
+        print('공부하자~')
+        
+# obj = Base() - 오류
+# obj.go_to_school()
+
+stu = Student()
+stu.go_to_school()
+stu.study()
+```
+```
+--- 실행 결과 ---
+학교에 갑니다.
+공부하자~
+```
+### 다중 상속
+
+- 두 개 이상의 클래스의 속성을 물려받는 것
+
+```python
+class Animal(object):
+    def cry(self):
+        pass
+
+class Lion(Animal):
+    def bite(self):
+        print('한 입에 꿀꺽한다')
+
+    def cry(self):
+        print('그르렁')
+
+class Tiger(Animal):
+    def jump(self):
+        print('호랑이가 점프를 한다')
+
+    def cry(self):
+        print('어흥')
+
+class Liger(Lion, Tiger):
+    def play(self):
+        print('라이거가 사육사와 재미있게 놀고 있다.')
+        
+liger = Liger()
+liger.play()
+liger.cry() # 다중상속된 클래스의 메서드의 경우 먼저 정의된 부모 클래스의 메서드가 실행된다.
+```
+
+```
+--- 실행 결과 ---
+라이거가 사육사와 재미있게 놀고 있다.
+그르렁
+```
+
