@@ -35,14 +35,14 @@ finally:
   ```
   ```
   본인의 나이를 입력하세요 : 28
-age - 28
-함수 실행 종료
-finally - 예외 발생 상관 없이 항상 실행
+  age - 28
+  함수 실행 종료
+  finally - 예외 발생 상관 없이 항상 실행
   ```
   ```
   본인의 나이를 입력하세요 : jyu
-error = invalid literal for int() with base 10: 'jyu'
-finally - 예외 발생 상관 없이 항상 실행
+  error = invalid literal for int() with base 10: 'jyu'
+  finally - 예외 발생 상관 없이 항상 실행
   ```
 
 - 사용자 정의 예외 클래스를 작성할 수 있다.
