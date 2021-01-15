@@ -13,11 +13,11 @@ def outer_func(func):
         print('함수 끝났다!')
     return inner_func
 
-def user_func():
-    print('user_func 함수가 수행되었습니다.')
+# def user_func():
+#     print('user_func 함수가 수행되었습니다.')
     
-decorator_func = outer_func(user_func)
-decorator_func()
+# decorator_func = outer_func(user_func)
+# decorator_func()
 
 # 위 과정을 심플하게 => '@함수명' 이용
 @outer_func
@@ -25,9 +25,13 @@ def user_func():
     print('user_func 함수가 수행되었습니다.')
     
 user_func()
-today()
 ```
-
+```
+--- 실행 결과 ---
+함수 시작했다!
+user_func 함수가 수행되었습니다.
+함수 끝났다!
+```
 ### 이터레이터 (Iterator)
 
 - iterable 객체(iterable object)
