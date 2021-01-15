@@ -21,7 +21,7 @@ open(파일경로, 모드)
   # hello.txt를 읽어들여 내용을 출력한다.
   file = open(file='hello.txt', mode='r')
   print(file.read())
-file.close()
+  file.close()
   
   # hello.txt에 '\nNice to meet you!'를 추가한다.
   file = open(file='hello.txt', mode='a')
