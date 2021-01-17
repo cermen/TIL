@@ -1,6 +1,8 @@
 # 객체지향 프로그래밍
 
-- 프로그래밍을 객체의 관점에서 접근하는 패러다임
+> 프로그래밍을 객체의 관점에서 접근하는 패러다임
+
+
 ### 클래스와 객체
 
 #### 클래스(Class)
@@ -113,7 +115,7 @@ class Child(Parent):	# Parent 클래스를 상속
 
 - 객체의 데이터와 기능을 하나로 묶고 외부에 노출되지 않도록 숨김 처리 하는 것
 - 파이썬은 protected, private 등의 접근 제어자가 없음
-  - 변수/함수명 앞에 `_`를 붙이면 protected가 되며, `__`를 붙이면 private가 된다.
+  - 변수/메서드명 앞에 `_`를 붙이면 protected가 되며, `__`를 붙이면 private가 된다.
 
 ```python
 class HidingClass(object):
@@ -123,7 +125,7 @@ class HidingClass(object):
         self.__dept = dept	# __로 시작하는 변수는 외부에서 접근이 되지 않는다.
         self.num = num
 
-    # private 변수에 접근하기 위해서는 getter와 setter 함수를 이용
+    # private 변수에 접근하기 위해서는 getter와 setter 메서드를 이용
     def get_dept(self):
         return self.__dept
     
@@ -131,7 +133,7 @@ class HidingClass(object):
         self.__dept = dept
 
     def __info(self):
-        return "__로 시작했기 때문에 해당 함수는 외부에서 접근이 되지 않습니다."
+        return "__로 시작했기 때문에 해당 메서드는 외부에서 접근이 되지 않습니다."
 ```
 
 ### 다형성 (Polymorphism)
