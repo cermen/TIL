@@ -37,3 +37,27 @@ if __name__ == '__main__':
 - Read : 조회(GET)
 - Update : 수정(PUT)
 - Delete : 삭제(DELETE)
+
+#### flask.jsonify 함수
+
+리턴 데이터를 JSON 포맷으로 제공
+
+**예시**
+
+```python
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/json_test')
+def hello_json():
+    data = {'name': 'jyu', 'age': 29}
+    return jsonify(data)
+
+
+@app.route('/server_info')
+def server_json():
+    data = {'server_name': '127.0.0.1', 'server_port': 8081}
+    return jsonify(data)
+```
+
