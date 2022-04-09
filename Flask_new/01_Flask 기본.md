@@ -61,3 +61,8 @@ class Test(db.Model):
     name = db.Column(db.String(32), unique=True)
 ```
 
+### Jinja2
+
+Flask에 내장되어 있는 템플릿 엔진
+
+- Jinja 웹 문서: [Jinja — Jinja Documentation (3.1.x) (palletsprojects.com)](https://jinja.palletsprojects.com/en/3.1.x/)
