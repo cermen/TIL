@@ -3,10 +3,13 @@
 #### 문자열 관련 메소드
 
 - `String.length` : 문자열의 길이를 반환
+- `String.prototype.split(tok)` : 문자열을 구분자에 따라 분리
 - `String.prototype.includes(substr)` : `substr`이 문자열에 포함되어 있는지를 True/False로 반환
 - `String.prototype.charAt(index)` : 문자열의 특정 인덱스의 값을 반환
 - `String.prototype.slice(start, end)` : 문자열의 `start` 인덱스부터 `end` 직전 인덱스까지의 부분 문자열을 반환  ex) 
 - `String.prototype.repeat(times)` : 문자열을 `times`번 반복하여 반환
+- `String.toLowerCase(str)` : 해당 문자열을 모두 소문자로 바꾸는 메소드
+- `String.toUpperCase(str)` : 해당 문자열을 모두 대문자로 바꾸는 메소드
 
 #### 배열 관련 메소드
 
@@ -32,9 +35,16 @@
 
 - `Array.prototype.map(func)` : 배열의 모든 요소에 해당 함수를 적용하는 메소드
 
+- `Array.prototype.splice()` : 배열의 요소를 삭제 또는 교체하기나 새 요소를 추가하는 메소드
+
 #### 형변환 메소드
 
 - `parseInt(num)` : 문자열을 정수로 변환
 - `parseFloat(num)` : 문자열을 실수로 변환
 - `Number.prototype.toString()` : 숫자를 문자열로 변환
 
+#### 수학 관련 메소드
+
+- `Math.min([numbers])` : 주어진 숫자 중 가장 작은 값을 반환한다.
+- `Math.max([numbers])` : 주어진 숫자 중 가장 큰 값을 반환한다.
+- `Math.sqrt(num)` : 주어진 숫자의 제곱근을 반환한다.
