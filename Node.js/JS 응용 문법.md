@@ -13,7 +13,8 @@
 ##### npm 주요 명령어
 
 - `npm init`: package.json 파일을 생성한다.
-- `npm init express`: package.json 파일을 생성한다.
+  - `npm init -y` : 기본값으로 자동 설정 
+- `npm install express`: package.json 파일을 생성한다.
 
 #### REPL
 

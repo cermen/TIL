@@ -93,5 +93,3 @@ router.get('/books', (req, res) => {
 	res.json({ success: true, data: getAllBooks() });
 });
 ```
-
-## 
