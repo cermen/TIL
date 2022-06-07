@@ -45,6 +45,8 @@
 
 - `Array.prototype.splice()` : 배열의 요소를 삭제 또는 교체하기나 새 요소를 추가하는 메소드
 
+- `Array.prototype.find(func)`: 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환하는 메소드
+
 
 #### 형변환 메소드
 
