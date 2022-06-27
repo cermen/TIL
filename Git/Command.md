@@ -86,8 +86,8 @@
 ### 1. gitignore
 
 - `.gitignore` 파일을 생성 후 git으로 관리하고 싶지 않은 파일들을 저장
-
-- [gitignore]: gitignore.io
+- 아래 사이트에서 gitignore 파일을 편리하게 생성할 수 있다.
+  https://www.toptal.com/developers/gitignore
 
 
 
