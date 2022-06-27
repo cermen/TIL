@@ -2,8 +2,6 @@
 
 > Git 명령어 정리
 
-
-
 ## 초기설정
 
 ### 0. init
@@ -51,7 +49,15 @@
 - '깃아 올려줘 origin으로 master를'
 - 원격저장소에 로컬 저장소의 데이터를 전송
 
+### 5. fetch
 
+- `git fetch <remote>`
+- 해당 원격 저장소를 가져옴
+
+### 6. pull
+
+- `git pull origin master`
+- 원격 저장소에 `fetch` 명령어로 가져온 후 `merge`까지 실행하는 명령어
 
 ## 상태확인
 
@@ -65,7 +71,8 @@
 - `git log`
 - 커밋 기록을 전체 다 출력
 
-- 옵션
+**옵션**
+
   - `--oneline` : author, date 같은 정보를 제외하고 한 줄로 출력
   - `--graph` : 커밋들을 점으로 표현하고 그 커밋을 선으로 연결해서 그래프 형태로 출력
   - `--branches` : 현재 브랜치에 속하지 않은 커밋까지 표시
@@ -79,7 +86,12 @@
 - 현재 변경사항을 보여줌
   - `git diff <A>..<B>` : A와 B 브랜치 간 코드 비교
 
+### 4. stash
 
+- `git stash` : 변경 내용을 임시로 저장
+- `git stash list` : stash 목록 확인
+- `git stash apply` : 임시저장한 내용을 다시 가져옴 (최근 것)
+  - `git stash apply [stash 이름]` : 해당 stash 내용을 다시 가져옴
 
 ## 추가파일
 
@@ -87,8 +99,8 @@
 
 - `.gitignore` 파일을 생성 후 git으로 관리하고 싶지 않은 파일들을 저장
 
-- [gitignore]: gitignore.io
-
+- 아래 사이트에서 gitignore 파일을 편리하게 생성할 수 있다.
+  https://www.toptal.com/developers/gitignore
 
 
 ## 브랜치
