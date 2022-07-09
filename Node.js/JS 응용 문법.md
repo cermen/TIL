@@ -147,5 +147,3 @@ async () => {
 ```js
 const result = await 값;
 ```
-
-### 
