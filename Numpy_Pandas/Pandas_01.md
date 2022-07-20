@@ -93,6 +93,55 @@ i    2.0
 dtype: float64
 ```
 
+#### Series 연산
+
+- Series는 index를 기준으로 연산한다.
+
+```python
+s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd'])
+s2 = pd.Series([6, 3, 2, 1], ['a', 'b', 'c', 'd'])
+print(s1 + s2)
+```
+
+```
+a    7
+b    5
+c    5
+d    5
+dtype: int64
+```
+
+- Series의 경우에도 스칼라와의 연산은 브로드캐스팅이 적용된다.
+
+```python
+print(s1 ** 2)
+```
+
+```
+a    1
+b    8
+c    9
+d    4
+dtype: int64
+```
+
+- index pair가 맞지 않는 경우에는 해당 인덱스에 NaN을 생성한다.
+
+```python
+s1 = pd.Series([1, 2, 3, 4], ['a', 'b', 'c', 'd'])
+s2 = pd.Series([6, 3, 2, 1], ['a', 'b', 'c', 'e'])
+print(s1 + s2)
+```
+
+```
+a    7.0
+b    5.0
+c    5.0
+d    NaN
+e    NaN
+dtype: float64
+```
+
 ### DataFrame 클래스
 
 - 2차원 배열을 다룸
