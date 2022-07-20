@@ -3,6 +3,7 @@
 ### 개요
 
 - 데이터 분석 및 조작을 위해 작성된 파이썬 라이브러리
+- 다음과 같이 선언한다.
 
 ```python
 import pandas as pd
@@ -13,6 +14,8 @@ import pandas as pd
 - 넘파이 1차원 배열과 비슷함
 - series = index + value
 
+**선언법 1**
+
 ```python
 arr1 = np.array([1,2,3,4,'jyu'] , dtype=np.object)
 print(arr1)
@@ -22,7 +25,7 @@ print(arr1)
 [1 2 3 4 'jyu']
 ```
 
-
+**선언법 2**: index 지정
 
 ```python
 arr2 = pd.Series([1,2,3,4,5],
@@ -40,7 +43,7 @@ print(arr2)
 dtype: int32
 ```
 
-
+**선언법 3**: dict 이용
 
 ```python
 arr3 = pd.Series({'a': 3, 'u': 9, 'd': -4, 'i': 2}, dtype=np.float64)
@@ -55,7 +58,18 @@ i    2.0
 dtype: float64
 ```
 
+#### Series 주요 속성/함수
+
+- `Series.size` : 원소의 개수(Series의 길이)를 반환
+- `Series.shape` : 원소의 개수를 튜플 형태로 반환
+- `Series.unique()` : 중복을 제거한 원소들을 반환
+- `Series.count()` : NaN을 제외한 개수를 반환
+- `Series.mean()` : NaN을 제외한 원소들의 평균을 반환
+- `Series.value_counts()` : NaN을 제외한 원소들의 빈도를 반환
+
 #### fancy indexing & boolean indexing
+
+- fancy indexing : Series에서 특정 번째 값만 indexing
 
 ```python
 print(ary[[0,2]])
@@ -67,7 +81,7 @@ d   -4.0
 dtype: float64
 ```
 
-
+- boolean indexing : Series에서 True에 해당하는 값만 indexing
 
 ```python
 print(ary[ary % 2 == 0])
@@ -78,8 +92,6 @@ d   -4.0
 i    2.0
 dtype: float64
 ```
-
-
 
 ### DataFrame 클래스
 
@@ -92,8 +104,6 @@ data = {'name': ['김철수', '이영희', '박영수', '최철희', '홍길동'
 userDF = pd.DataFrame(data)
 display(userDF)
 ```
-
-![](C:\Users\SAMSUNG\Desktop\TIL\ML\pandas_img\dataframe.PNG)
 
 - DataFrame의 내장 속성과 메서드 
   - `DataFrame.shape`: 열/행 수
@@ -120,8 +130,6 @@ print(userDF['name'])
 4    홍길동
 Name: name, dtype: object
 ```
-
-
 
 ```python
 print(userDF['name'][[0,2]])
