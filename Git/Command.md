@@ -92,6 +92,8 @@
 - `git stash list` : stash 목록 확인
 - `git stash apply` : 임시저장한 내용을 다시 가져옴 (최근 것)
   - `git stash apply [stash 이름]` : 해당 stash 내용을 다시 가져옴
+- `git stash drop` : 최근 stash 삭제
+- `git stash clear` : 전체 stash 삭제
 
 ## 추가파일
 
