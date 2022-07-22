@@ -1,33 +1,35 @@
-Create your views here.
-select * from table ;
--> modelName.objects.all()
+# MongoDB 쿼리 정리
 
-select * from table where id = xxxx;
--> modelName.objects.get(id = xxxx)
--> modelName.objects.filter(id = xxxx)
+### 삽입 (Create)
 
-select * from table where id = xxxx and pwd = xxxx;
--> modelName.objects.get(id = xxxx , pwd = xxxx)
--> modelName.objects.filter(id = xxxx , pwd = xxxx)
+- 한 개 삽입: `db.collection.insertOne(<doc>)`
+- 여러 개 삽입: `db.collection.insertMany({<doc1>, <doc2>, ...})`
 
-select * from table where id = xxxx or pwd = xxxx;
--> modelName.objects.filter(Q(id = xxxx) | Q(pwd = xxxx))
+### 검색 (Read)
 
-select * from table where subject like '%공지%'
--> modelName.objects.filter(subject_icontains='공지')
-select * from table where subject like '공지%'
--> modelName.objects.filter(subject_startswith='공지')
-select * from table where subject like '%공지'
--> modelName.objects.filter(subject_endswith='공지')
+`db.collection.find({조건})`를 사용한다.
 
-insert into table values()
-model(attr=value , attr=value)
-model.save()
+### 수정 (Update)
 
-delete * from tableName where id = xxxx
--> modelName.objects.get(id=xxx).delete()
+- 한 개 수정: `db.collection.updateOne({조건}, {$set: {}})`
+- 여러 개 수정: `db.collection.updateMany({조건}, {$set: {}})`
 
-update tableName set attr = value where id = xxxxx
-obj = modelName.objects.get(id=xxxxx)
-obj.attr = value
-obj.save() -- commit
+### 삭제 (Delete)
+
+- 한 개 삭제: `db.collection.deleteOne({조건})`
+- 여러 개 삭제: `db.collection.deleteMany({조건})`
+
+
+
+| SQL 쿼리                                              | MongoDB 쿼리                                                 |
+| ----------------------------------------------------- | ------------------------------------------------------------ |
+| `select * from table;`                                | `db.collection.find({})`;                                    |
+| `select * from table where id = xxxx;`                | `db.collection.find({id: xxxx})`                             |
+| `select * from table where id = xxxx and pwd = xxxx;` | `db.collection.find({id: xxxx, pwd: xxxx})`                  |
+| `select * from table where id = xxxx or pwd = xxxx;`  | `db.collection.find($or: [{id: xxxx}, {pwd: xxxx}])`         |
+|                                                       |                                                              |
+|                                                       |                                                              |
+|                                                       |                                                              |
+| `insert into table values()`                          | `db.collection.insertOne()`<br />`db.collection.insertMany()` |
+| `update tableName set attr = value where id = xxxxx`  | `db.collection.updateOne()`<br />`db.collection.updateMany()` |
+| `delete * from tableName where id = xxxx`             | `db.collection.updateOne()`<br />`db.collection.updateMany()` |
