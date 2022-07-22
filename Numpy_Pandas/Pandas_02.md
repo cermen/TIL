@@ -58,12 +58,14 @@ print(sampleDF['col01']['a':'b'])
 
 - `count()` : 각 열의 `NaN`이 아닌 행의 개수를 반환
 - `value_counts()` : 각 값의 개수를 반환
-- `drop(label= , axis= , inplace=T|F)` : 해당 컬럼 삭제
-- `reset_index()` : 새로운 인덱스 할당 , 기존 인덱스는 인덱스라는 새로운 피처로 추가 할 수 있다
+- `df[new_col]` : 새 컬럼 ` new_col` 추가
+- `drop(label= , axis= , inplace= )` : 해당 컬럼 삭제
+- `set_index()` : 해당 컬럼을 인덱스로 설정
+- `reset_index()` : 새로운 인덱스 할당, 기존 인덱스는 새로운 컬림이 된다.
 - 여러개의 복합 조건을 이용해서 불리언 인덱스를 만들어서 작업
-  - and -> &
-  - or -> |
-  - not -> ! , ~
+  - and -> `&`
+  - or -> `|`
+  - not -> `!` , `~`
 
 #### 정렬
 

@@ -162,6 +162,7 @@ display(userDF)
   - `DataFrame.columns` : 컬럼명
   - `DataFrame.dtypes` : 각 열의 자료형
   - `DataFrame.info()` : 각 열의 자세한 정보
+  - `DataFrame.describe()` : 각 열의 통계 정보
 
 #### DataFrame indexing
 
@@ -188,6 +189,18 @@ print(userDF['name'][[0,2]])
 0    김철수
 2    박영수
 Name: name, dtype: object
+```
+
+- 그러나 slicing은 행을 추출한다.
+
+```python
+print(userDF[0:2])
+```
+
+```
+   name  birth      phone
+0  김철수   2000  1111-1111
+1  이영희   2001  2222-2222
 ```
 
 #### Pandas 문자 함수
