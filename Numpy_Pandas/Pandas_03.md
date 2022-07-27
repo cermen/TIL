@@ -64,3 +64,8 @@ dept_series.mean()
 dept_series.agg([np.mean, np.sum])
 ```
 
+### One-hot encoding
+
+- 특정 범주에 해당할 경우 1로, 해당하지 않을 경우 0으로 채우는 인코딩 기법
+- `get_dummies()` 함수를 사용한다.
+  - 첫 번째 범주를 지울 경우 `drop_first` 속성을 `True`로 설정한다.
