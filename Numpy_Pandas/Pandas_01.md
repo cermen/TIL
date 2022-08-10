@@ -96,6 +96,11 @@ display(userDF)
 ![](C:\Users\SAMSUNG\Desktop\TIL\Numpy_Pandas\pandas_img\dataframe.PNG)
 
 - DataFrame의 내장 속성과 메서드 
+  
+  - `DataFrame.head(n)`: 상위 n개 행 출력 (기본값 5)
+  - `DataFrame.tail(n)`: 하위 n개 행 출력 (기본값 5)
+  - `DataFrame.sample(n)`: n개 행을 무작위로 출력 (기본값 5)
+  
   - `DataFrame.shape`: 열/행 수
   - `DataFrame.size`: 행렬 크기 (열x행)
   - `DataFrame.ndim`: 차원
