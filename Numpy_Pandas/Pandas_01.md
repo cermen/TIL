@@ -144,9 +144,9 @@ print(userDF['name'][[0,2]])
 Name: name, dtype: object
 ```
 
-#### Pandas 문자 함수
+#### Pandas Series 문자 함수
 
-함수 앞에 `str`
+Series 앞에 `str`
 
 - `str[index]` : 해당 문자열 인덱스에 위치하는 값을 반환
 - `str.split(tok)` : 문자열을 `tok `기준으로 나눔
