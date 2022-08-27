@@ -13,6 +13,8 @@ import pandas as pd
 - 넘파이 1차원 배열과 비슷함
 - series = index + value
 
+**예시1**
+
 ```python
 arr1 = np.array([1,2,3,4,'jyu'] , dtype=np.object)
 print(arr1)
@@ -22,7 +24,7 @@ print(arr1)
 [1 2 3 4 'jyu']
 ```
 
-
+**예시2**
 
 ```python
 arr2 = pd.Series([1,2,3,4,5],
@@ -40,7 +42,7 @@ print(arr2)
 dtype: int32
 ```
 
-
+**예시3**
 
 ```python
 arr3 = pd.Series({'a': 3, 'u': 9, 'd': -4, 'i': 2}, dtype=np.float64)
@@ -57,6 +59,8 @@ dtype: float64
 
 #### fancy indexing & boolean indexing
 
+**fancy indexing**
+
 ```python
 print(ary[[0,2]])
 ```
@@ -67,7 +71,7 @@ d   -4.0
 dtype: float64
 ```
 
-
+**boolean indexing**: Series에서 boolean 조건을 만족하는 index의 원소를 추출함 
 
 ```python
 print(ary[ary % 2 == 0])
@@ -78,8 +82,6 @@ d   -4.0
 i    2.0
 dtype: float64
 ```
-
-
 
 ### DataFrame 클래스
 
@@ -131,8 +133,6 @@ print(userDF['name'])
 4    홍길동
 Name: name, dtype: object
 ```
-
-
 
 ```python
 print(userDF['name'][[0,2]])
