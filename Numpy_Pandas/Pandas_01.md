@@ -102,7 +102,6 @@ display(userDF)
   - `DataFrame.head(n)`: 상위 n개 행 출력 (기본값 5)
   - `DataFrame.tail(n)`: 하위 n개 행 출력 (기본값 5)
   - `DataFrame.sample(n)`: n개 행을 무작위로 출력 (기본값 5)
-  
   - `DataFrame.shape`: 열/행 수
   - `DataFrame.size`: 행렬 크기 (열x행)
   - `DataFrame.ndim`: 차원
@@ -111,7 +110,6 @@ display(userDF)
   - `DataFrame.dtypes` : 각 열의 자료형
   - `DataFrame.info()` : 각 열의 자세한 정보
   - `DataFrame.describe()` : 각 열의 통계 정보
-  - `DataFrame.drop_duplicates(subset=[])` : subset의 열에서 중복 값을 가진 행 삭제
 - DataFrame 컬럼 관련 메서드 
   - `DataFrame.column.describe()` : 해당 열의 통계 정보
   - `DataFrame.column.mean()` : 해당 열의 평균 반환
