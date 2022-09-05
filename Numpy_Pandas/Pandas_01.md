@@ -95,7 +95,7 @@ userDF = pd.DataFrame(data)
 display(userDF)
 ```
 
-![](C:\Users\SAMSUNG\Desktop\TIL\Numpy_Pandas\pandas_img\dataframe.PNG)
+![](C:\Users\USER\Desktop\TIL\Numpy_Pandas\pandas_img\dataframe.PNG)
 
 - DataFrame의 내장 속성과 메서드 
   
@@ -111,10 +111,13 @@ display(userDF)
   - `DataFrame.dtypes` : 각 열의 자료형
   - `DataFrame.info()` : 각 열의 자세한 정보
   - `DataFrame.describe()` : 각 열의 통계 정보
+  - `DataFrame.drop_duplicates(subset=[])` : subset의 열에서 중복 값을 가진 행 삭제
 - DataFrame 컬럼 관련 메서드 
   - `DataFrame.column.describe()` : 해당 열의 통계 정보
   - `DataFrame.column.mean()` : 해당 열의 평균 반환
+  - `DataFrame.column.values()` : 해당 열의 값들을 리스트로 반환
   - `DataFrame.column.unique()` : 해당 열의 값들을 중복을 제거하고 반환
+  - `DataFrame.column.nunique()` : 해당 열의 값들의 중복을 제외한 개수 변환
   - `DataFrame.column.value_counts()` : 해당 열의 각 값이 나오는 횟수 반환
 
 #### DataFrame indexing
