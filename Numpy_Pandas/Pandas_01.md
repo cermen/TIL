@@ -107,6 +107,7 @@ display(userDF)
   - `DataFrame.ndim`: 차원
   - `DataFrame.index` : 인덱스명
   - `DataFrame.columns` : 컬럼명
+  - `DataFrame.values` : DF의 전체 값을 행렬로 반환
   - `DataFrame.dtypes` : 각 열의 자료형
   - `DataFrame.info()` : 각 열의 자세한 정보
   - `DataFrame.describe()` : 각 열의 통계 정보

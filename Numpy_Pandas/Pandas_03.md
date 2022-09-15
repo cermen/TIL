@@ -19,7 +19,7 @@ sampleDF['최대-최소'] = sampleDF.apply(func, axis=1)
 - `isnull()`, `isna()` : 각 원소에 대하여 NaN이면 `True`, 아니면 `False`를 반환한다.
 - `notnull()`, `notna()` : 각 원소에 대하여 NaN이면 `False`, 아니면 `True`를 반환한다. (`isnul`l/`isna`의 반대)
 - `fillna(val)` : NaN 값을 원하는 값으로 변경한다.
-- `dropna()` : NaN이 포함된 행을 삭제한다.
+- `dropna(subset= )` : NaN이 포함된 행을 삭제한다. (`subset`이 있을 경우 해당 열이 NaN인 것만)
 
 ### 프레임 인덱스 조작하는 방법
 
