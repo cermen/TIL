@@ -198,5 +198,163 @@ System.out.println(num1 | num2)		// 13 (1101)
 System.out.println(~num1);			// -6 (..111010)
 ```
 
+### 조건문
 
+#### if문
+
+아래의 형식을 가지며 조건식이 true일 경우에 실행 코드가 구현된다.
+
+```java
+if (조건식){
+    실행 코드
+}
+```
+
+**예시**
+
+```java
+int check = 100;
+int num1 = 150;
+if (num1 > check) {
+    System.out.println("100보다 큰 수입니다");
+}
+```
+
+```java
+int num2 = 50;
+if (num1 > check) {
+    System.out.println("100보다 큰 수입니다");
+} else {
+    System.out.println("100보다 작은 수입니다.");
+}
+```
+
+#### switch문
+
+입력 변수에 따라 해당 변수에 해당하는 경우의 로직을 수행한다.
+
+```java
+char score = 'A';
+switch (score) {
+    case 'A':
+        System.out.println("A등급입니다.");
+        break;
+    case 'B':
+        System.out.println("B등급입니다.");
+        break;
+    case 'C':
+        System.out.println("C등급입니다.");
+        break;
+    default:
+        System.out.println("C등급보다 낮은 등급입니다.");
+        break;
+}
+```
+
+- **주의**: `break`를 하지 않을 경우 다음 case 코드 블럭도 실행된다.
+
+#### 삼항연산자
+
+> `(조건식) ? A : B`
+
+조건식이 참일 경우 왼쪽 로직을, 거짓일 경우 오른쪽 로직을 수행한다.
+
+```java
+int a = 5;
+
+String result = (a < 10) ? "10보다 작습니다." : "10보다 큽니다.";
+System.out.println(result);		// "10보다 작습니다." 출력
+```
+
+### 반복문
+
+#### while문
+
+조건식을 더이상 만족하지 않을 때까지 괄호 안의 로직을 반복 수행한다.
+
+```
+while (조건식){
+    실행 코드 블럭
+}
+```
+
+```java
+int i = 0;
+int sum = 0;
+while (i < 10) {
+    sum += i + 1;
+    i += 1;
+}
+System.out.println(sum);
+```
+
+#### for문
+
+```java
+for(초기값 ; 조건식 ; 증감식){
+    실행 코드 블럭
+}
+```
+
+**예시**
+
+```javascript
+int sum = 0;
+
+for (int i = 0; i < 10; i++) {
+    sum += (i + 1);
+}
+System.out.println(sum);
+```
+
+#### for-each문
+
+- Python의 for-in문과 동일한 기능을 한다.
+
+```java
+for (String day : days) {
+    System.out.println(day);
+}
+```
+
+#### do-while문
+
+기존 while문의 조건 검사를 끝 부분(로직 수행 후)에 수행한다.
+
+```java
+int i = 1;
+int result = 0;
+do {
+    result += i;
+    i += 1;
+} while (i < 2);
+System.out.println(result);
+```
+
+#### break와 continue
+
+- `break`: if문 내의 로직에 해당할 경우 반복문 실행을 중단한다.
+
+```java
+int i = 0;
+while (i < 10){
+    if (i==5){
+        break;
+    }
+    i += 1;
+}
+System.out.println(i);	// 5
+```
+
+- `continue` : if문 내의 로직에 해당할 경우 해당 회차(iteration)의 이후 로직을 생략한다.
+
+```java
+// 숫자 0~9 중 5를 제외하고 모두 출력된다.
+for(int i=0;i<10;i++){
+    if (i==5){
+        continue;
+    }
+    System.out.println(i);
+}
+```
 
