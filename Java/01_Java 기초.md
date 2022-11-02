@@ -8,11 +8,27 @@
 #### Java 기초 코드
 
 ```java
-public class HelloWorldApp {
+public class HelloWorld {
 	public static void main(String[] args) {
 		System.out.println("Hello world!");
 	}
 }
+```
+
+### 표준 입력과 출력
+
+- 표준 출력에는 `System.out.println()`을 사용한다.
+- 표준 입력에는 `Scanner` 객체를 이용한다. 
+  특정 변수에 값을 대입하는 데 `next()` 계열의 메서드를 사용하며, 변수 자료형마다 서로 다르다.
+
+```java
+Scanner scanner = new Scanner(System.in);
+String myString = scanner.next();	// String형 변수에 값 대입
+int myInt = scanner.nextInt();		// Integer형 변수에 값 대입
+scanner.close();
+
+System.out.println("myString is: " + myString);
+System.out.println("myInt is: " + myInt);
 ```
 
 ### 변수와 상수
