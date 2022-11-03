@@ -20,10 +20,15 @@ public class HelloWorld {
 - 표준 출력에는 `System.out.println()`을 사용한다.
 - 표준 입력에는 `Scanner` 객체를 이용한다. 
   특정 변수에 값을 대입하는 데 `next()` 계열의 메서드를 사용하며, 변수 자료형마다 서로 다르다.
+  - `nextInt()` : Integer형 변수에 값 대입
+  - `nextFloat()` : Float형 변수에 값 대입
+  - `nextDouble()` : Double형 변수에 값 대입
+  - `next()` : String형 단어 값 대입
+  - `nextLine()` : String형 문장 값 대입
 
 ```java
 Scanner scanner = new Scanner(System.in);
-String myString = scanner.next();	// String형 변수에 값 대입
+String myString = scanner.next();	// String형 단어 값 대입
 int myInt = scanner.nextInt();		// Integer형 변수에 값 대입
 scanner.close();
 
