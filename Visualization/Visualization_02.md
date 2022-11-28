@@ -118,7 +118,7 @@ plt.show()
 plt.close()
 ```
 
-- jointplot() : 기본적으로 산점도, x-y축에 각 변수에 대한 히스토그램을 동시에 보여준다.
+- `jointplot()` : 기본적으로 산점도, x-y축에 각 변수에 대한 히스토그램을 동시에 보여준다.
 
 ```python
 # kind 속성 : reg, hex, kde
@@ -127,10 +127,18 @@ plt.show()
 plt.close()
 ```
 
-- pairplot : 상관관계를 시각화하기 위한 함수
+- `pairplot()` : 상관관계를 시각화하기 위한 함수
 
 ```python
 sns.pairplot(iris_datasets, hue='species', markers=['o', 's', 'D'])
+plt.show()
+plt.close()
+```
+
+- `scatterplot()` : 산점도 그리기
+
+```python
+sns.scatterplot(data=candy_data, x='sugarpercent', y='winpercent')
 plt.show()
 plt.close()
 ```
