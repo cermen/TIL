@@ -1,4 +1,4 @@
-# 데이터 시각화 3일차
+# 데이터 시각화 - Seaborn
 
 ### Seaborn plot
 
@@ -47,8 +47,9 @@ plt.show()
 plt.close()
 ```
 
-- `regplot()` : 선점도 - 선형회귀분석 위한 회귀선을 나타내주는 함수
-  - 연속변수의 수치형
+- 범주형 데이터의 분포도
+  - `stripplot()` : 데이터 포인트가 중복되어 그려짐
+  - `swarmplot()` : 데이터 포인트가 중복되지 않도록 그려짐
 
 ```python
 sns.set_style('dark')
@@ -56,10 +57,40 @@ sns.set_style('dark')
 fig = plt.figure(figsize=(15, 5))
 
 area01 = fig.add_subplot(1, 2, 1)
-sns.regplot(x='age', y='fare', data=titanic_datasets, ax=area01)
+sns.stripplot(x='class', y='age', data=titanic_datasets, ax=area01)
 
 area02 = fig.add_subplot(1, 2, 2)
-sns.regplot(x='age', y='fare', data=titanic_datasets, ax=area02, fit_reg=False)
+sns.swarmplot(x='class', y='age', data=titanic_datasets, ax=area02)
+
+plt.show()
+plt.close()
+```
+
+- `regplot()` : 선형 회귀분석을 위한 회귀선을 나타내주는 함수
+
+```python
+sns.set_style('dark')
+
+fig = plt.figure(figsize=(15, 5))
+
+area01 = fig.add_subplot(1, 2, 1)
+sns.regplot(data=iris_datasets, x='sepal_length', y='petal_length', ax=area01)
+
+area02 = fig.add_subplot(1, 2, 2)
+sns.regplot(data=iris_datasets, x='sepal_length', y='petal_length', ax=area02, fit_reg=False)	# 회귀선 해제
+
+plt.show()
+plt.close()
+```
+
+- `	lmplot()` : hue 컬럼의 데이터별로 회귀선을 그릴 때 사용한다.
+
+```
+sns.set_style('dark')
+
+fig = plt.figure(figsize=(15, 5))
+
+sns.lmplot(data=iris_datasets, x='sepal_length', y='petal_length', hue='species')
 
 plt.show()
 plt.close()
@@ -94,25 +125,6 @@ plt.close()
 table = titanic_datasets.pivot_table(index=['sex'], columns=['class'], aggfunc='size')
 
 sns.heatmap(table, cbar=True, annot=True, fmt='d', linewidths=0.5)
-
-plt.show()
-plt.close()
-```
-
-- 범주형 데이터의 분포도
-  - `stripplot()` : 데이터 포인트가 중복되어 그려짐
-  - `swarmplot()` : 데이터 포인트가 중복되지 않도록 그려짐
-
-```python
-sns.set_style('dark')
-
-fig = plt.figure(figsize=(15, 5))
-
-area01 = fig.add_subplot(1, 2, 1)
-sns.stripplot(x='class', y='age', data=titanic_datasets, ax=area01)
-
-area02 = fig.add_subplot(1, 2, 2)
-sns.swarmplot(x='class', y='age', data=titanic_datasets, ax=area02)
 
 plt.show()
 plt.close()
