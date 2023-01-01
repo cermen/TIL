@@ -40,10 +40,10 @@ li = [1, 2, 3]
   print(a[1])
   print(a[2])
   # print(a[3])  - IndexError
-
+  
   # slicing
   print(a[0:2])
-
+  
   a[0] = 5
   print(a)
   ```
@@ -128,6 +128,19 @@ b = "banana"	# '', "" 모두 사용 가능
     - `rstrip()` : 문자열 오른쪽 공백 제거
   - `endswith(tup)` : 문자열 내에 tup 안의 문자열이 있는지를 확인
   - `count(ch)` : 문자열 내 ch의 빈도
+
+#### f 문자열 포매팅
+
+- Python 3.6부터 추가된 기능
+- 문자열 앞에 `f`를 붙이면 `{}` 안에 다른 변수를 넣을 수 있다.
+
+```python
+name = '정연욱'
+age = 28
+
+hello = f'제 이름은 {name}입니다. 나이는 {age}입니다.'
+print(hello)
+```
 
 ### 4. Mapping type (dict) - {}
 ```python
