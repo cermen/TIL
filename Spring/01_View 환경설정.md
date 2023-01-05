@@ -18,17 +18,6 @@ resources/static 폴더에 index.html 문서를 생성하고 다음과 같이 �
 </html>
 ```
 
-#### 템플릿 엔진
-
-> 템플릿 양식과 특정 데이터 모델에 따른 입력 자료를 합성하여 결과 문서를 출력하는 소프트웨어 또는 소프트웨어 컴포넌트
-
-##### Spring의 템플릿 엔진
-
-- FreeMarker
-- Groovy
-- Thymeleaf - 주로 이것을 사용한다.
-- Mustache
-
 #### 샘플 페이지
 
 **controller**
@@ -66,7 +55,7 @@ public class HelloController {
 </html>
 ```
 
-- 컨트롤러에서 리턴 값으로 문자를 반환하면 viewResolver가 `문자.html` 파일을 찾아서 처리한다.
+- 컨트롤러에서 리턴 값으로 `문자`를 반환하면 viewResolver가 `문자.html` 파일을 찾아서 처리한다.
 
 ### 빌드하고 실행하기
 
