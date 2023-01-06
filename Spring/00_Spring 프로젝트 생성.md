@@ -1,6 +1,6 @@
 # Spring 프로젝트 생성
 
-1. https://start.spring.io/를 접속한다.
+1. https://start.spring.io/에 접속한다.
    ![](C:\Users\USER\Pictures\Screenshots\스크린샷_20230103_120931.png)
 2. Group과 Name을 설정한다.
 3. Java 버전은 Spring Boot 버전 3을 사용할 경우 경우 17을, 2를 사용할 경우 11을 선택한다.
