@@ -103,6 +103,8 @@ public class MemoryMemberRepository implements MemberRepository {
 - 자바에서는 JUnit이라는 프레임워크를 이용해 테스트를 수행한다.
 - 테스트 케이스 코드는 `src/test/java` 하위 폴더에 설정한다.
 
+#### 리포지토리 테스트 코드
+
 ```java
 package hello.hellospring.repository;
 
@@ -166,6 +168,8 @@ public class MemoryMemberRepositoryTest {
 }
 ```
 
+- **`@AfterEach`** : 각 테스트가 종료될 때마다 이 기능을 실행한다. 
+
 ### 회원 서비스 개발
 
 ```java
@@ -207,3 +211,92 @@ public class MemberService {
 }
 ```
 
+### 회원 서비스 테스트
+
+구현 전 할 일: 회원 리포지토리의 코드가 회원 서비스 코드를 DI 가능하게 변경한다.
+
+- **DI**(Dependeny Injection) : 의존관계 주입 - 객체를 직접 생성하지 않고 외부에서 생성한 후 주입시켜준다.
+
+```java
+public class MemberService {
+    private final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+    // 이하 생략
+}
+```
+
+#### 서비스 테스트 코드
+
+```java
+package hello.hellospring.service;
+
+import hello.hellospring.domain.Member;
+import hello.hellospring.repository.MemoryMemberRepository;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.*;
+
+class MemberServiceTest {
+    MemberService memberService;
+    MemoryMemberRepository memberRepository;
+
+    @BeforeEach
+    public void beforeEach() {
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
+    }
+
+    @AfterEach
+    public void afterEach() {
+        memberRepository.clearStore();
+    }
+
+    @Test
+    void 회원가입() {
+        // given
+        Member member = new Member();
+        member.setName("spring");
+
+        // when
+        Long saveId = memberService.join(member);
+
+        // then
+        Member findMember = memberService.findOne(saveId).get();
+        assertThat(member.getName()).isEqualTo(findMember.getName());
+    }
+
+    @Test
+    public void 중복회원_예외() {
+        // given
+        Member member1 = new Member();
+        member1.setName("spring");
+
+        Member member2 = new Member();
+        member2.setName("spring");
+
+        // when
+        memberService.join(member1);
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+
+        assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+
+//        try {
+//            memberService.join(member2);
+//            fail();
+//        } catch (IllegalStateException e) {
+//            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
+//        }
+
+        // then
+    }
+}
+```
+
+- **`@BeforeEach`** : 각 테스트 실행 전에 이 기능을 실행한다. 테스트가 서로 영향이 없도록 항상 새로운 객체를 생성하고, 의존관계도 새로 맺어준다.
