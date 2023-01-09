@@ -57,6 +57,8 @@ public class HelloController {
 
 - 컨트롤러에서 리턴 값으로 `문자`를 반환하면 viewResolver가 `문자.html` 파일을 찾아서 처리한다.
 
+![](C:\Users\USER\Pictures\Screenshots\스크린샷_20230109_101845.png)
+
 ### 빌드하고 실행하기
 
 1. Mac의 경우 콘솔, Windows의 경우 git bash 실행
