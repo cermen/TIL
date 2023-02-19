@@ -1,6 +1,14 @@
 # 로그인과 로그아웃
 
-로그인, 로그아웃 기능 구현하는 앱 : `django.contrib.auth`
+```html
+<!-- templates\pybo\question_list.html -->
+<td>
+    <a href="{% url 'pybo:detail' question.id %}">{{ question.subject }</a> 	{% if question.answer_set.count %}    
+    <span class="text-danger small ml-2">{{ question.answer_set.count }}
+    </span>
+    {% endif %}
+</td>
+```
 
 ### common 앱
 

@@ -75,7 +75,7 @@ def question_create(request):
 
 로그아웃 상태에서 질문 등록하기를 눌러 로그인 화면으로 전환된 상태의 URL을 보면 next 파라미터가 나타난다. => 로그인 성공 후 next 옆에 있는 URL로 이동할 것을 의미한다. 
 
-이를 위해 로그인 템플릿에 다음과 같이 추가한다.
+xxxxxxxxxx {% extends 'base.html' %}{% load pybo_filter %}{% block content %}<div class="container my-3">    <table class="table">        <thead>            <tr class="thead-dark">                <th>번호</th>                <th>제목</th>                <th>작성일시</th>            </tr>        </thead>        <tbody>            {% if question_list %}            {% for question in question_list %}            <tr>                <td>                    <!-- 번호 = 전체건수 - 시작인덱스 - 현재인덱스 + 1 -->                    {{ question_list.paginator.count|sub:question_list.start_index|sub:forloop.counter0|add:1 }}                </td>                <td><a href="{% url 'pybo:detail' question.id %}">{{ question.subject }}</a></td>                <td>{{ question.create_date }}</td>            </tr>html
 
 ```html
 <!--templates\common\login.html  -->
