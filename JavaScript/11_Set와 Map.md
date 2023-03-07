@@ -40,7 +40,7 @@ console.log(map);	// Map(2) { 'key1' => '사과', 'key2' => '바나나' }
 - `Map.prototype.entries()` : key, value 모두 반환
 - `Map.prototype.has(key)` : map에 해당 key가 존재하는지 확인
 - `Map.prototype.get(val)` : map의 해당 key의 값 반환
-- `Map.prototype.add(val)` : map에 값 추가
+- `Map.prototype.set(val)` : map에 값 추가
 - `Map.prototype.delete(val)` : set의 값 삭제
 - `Map.prototype.clear()` : set의 값 전부 삭제
 
